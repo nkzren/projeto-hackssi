@@ -1,78 +1,43 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <v-card class="logo py-4 d-flex flex-column center justify-center">
-        <v-card-title class="headline">
-          Nome
-        </v-card-title>
-        <v-card-subtitle>
-          Descrição
-        </v-card-subtitle>
-      </v-card>
-      <v-card>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
+  <v-container class="fill-height">
+    <v-row>
+      <v-col cols="12" sm="8" md="6" align-items="center">
+        <!-- align pra alinhamento horizontal, justify pra alinhamento vertical -->
+        <div class="title headline justify-center my-16" align="center">
+          <h1>Nome</h1>
+        </div>
+        <div class="description" align="center">
+          <h3>Descrição</h3>
+        </div>
+      </v-col>
+    </v-row>
+    <v-row class="pt-16">
+      <v-col cols="12" sm="8" md="6">
+        <v-card-actions class="d-flex flex-column" align-items="center" width="auto">
           <v-btn
+            class="text-xs-center black--text" 
             color="primary"
+            elevation="2"
             nuxt
-            to="/inspire"
+            large
+            to="/registrar"
           >
-            Continue
+          Criar nova conta de graça
+          </v-btn>
+          <v-btn
+            class="ma-1 text-xs-center" 
+            color="#000000"
+            nuxt
+            plain
+            to="/entrar"
+          >
+          Já tenho uma conta
           </v-btn>
         </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
+
+<style scoped>
+</style>

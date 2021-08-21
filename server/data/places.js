@@ -1,5 +1,6 @@
 const places = [
   {
+    id: 1,
     name: "Cinema tal",
     address: "Rua alguma, 234 - Centro - São Paulo - SP",
     accessibility: {

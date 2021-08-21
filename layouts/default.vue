@@ -1,6 +1,7 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-navigation-drawer
+      class="teal lighten-5"
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -25,24 +26,23 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
+      class="primary"
       :clipped-left="clipped"
       fixed
       app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn
+      <!-- n sei se vamos colocar isso aqui -->
+      <!-- <v-btn
         icon
         @click.stop="miniVariant = !miniVariant"
       >
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
+      </v-btn> -->
       <v-toolbar-title v-text="title" />
-      <v-spacer />
     </v-app-bar>
     <v-main>
-      <v-container>
-        <Nuxt />
-      </v-container>
+      <Nuxt />
     </v-main>
     <v-footer
       :absolute="!fixed"
@@ -68,14 +68,13 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Entrar/Registrar',
-          to: '/inspire'
+          title: 'Registrar',
+          to: '/registrar'
         }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
     }
   }
 }
