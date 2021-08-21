@@ -1,0 +1,19 @@
+{
+  "name": "server-projeto-hackssi",
+  "version": "1.0.0",
+  "description": "Server BFF da equipe 3 da HackSSI 2021",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Jadno Barbosa",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
