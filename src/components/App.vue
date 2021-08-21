@@ -15,6 +15,15 @@
         Checkout <code>./README.md</code> for more usages.
       </span>
     </div>
+    <iframe
+      width="600"
+      height="450"
+      style="border:0"
+      loading="lazy"
+      allowfullscreen
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAnWls6e9c2jwt2xq3KA-yg2naD03_dOpU
+        &q=Praca+da+Se,+SP">
+    </iframe>
   </div>
 </template>
 
