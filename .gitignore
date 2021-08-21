@@ -1,6 +1,7 @@
 node_modules
 *.log
 .DS_Store
+.vscode
 
 # poi dist
 dist
