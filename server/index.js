@@ -3,6 +3,8 @@ const { json, urlencoded } = require('body-parser');
 const cors = require('cors');
 const app = express();
 
+const places = require('./data/places');
+
 app.use(cors());
 app.use(json());
 app.use(urlencoded({extended: true}));
@@ -15,7 +17,7 @@ app.get("/equipe", (req, res) => {
 
 app.get("/locais", (req, res) => {
 
-  return res.send("locais");
+  return res.status(200).send(places);
 
 });
 
