@@ -21,22 +21,22 @@
     </v-card>
 
     <v-row class="text-center mt-1 ml-2">
-      <div
-        v-for="item in availableAccessibility"
-        :key="item"
-        class="pa-2 my-2 mx-1 secondary rounded-circle d-inline-block"
-      >
-        <v-icon color="white" v-if="item === 'fisica'"
-          >mdi-wheelchair-accessibility</v-icon
+        <div
+          v-for="item in availableAccessibility"
+          :key="item"
+          class="pa-2 my-2 mx-1 secondary rounded-circle d-inline-block"
         >
-        <v-icon color="white" v-if="item === 'visual'">mdi-eye-off</v-icon>
-        <v-icon color="white" v-if="item === 'auditiva'"
-          >mdi-ear-hearing-off</v-icon
-        >
-      </div>
+          <v-icon color="white" v-if="item === 'fisica'"
+            >mdi-wheelchair-accessibility</v-icon
+          >
+          <v-icon color="white" v-if="item === 'visual'">mdi-eye-off</v-icon>
+          <v-icon color="white" v-if="item === 'auditiva'"
+            >mdi-ear-hearing-off</v-icon
+          >
+        </div>
     </v-row>
 
-    <v-card :loading="loading" class="mt-5" max-width="374">
+    <v-card :loading="loading" class="mt-5">
       <template slot="progress">
         <v-progress-linear
           color="primary"
@@ -46,7 +46,7 @@
       </template>
 
       <iframe
-        width="350"
+        width="100%"
         height="250"
         style="border: 0"
         loading="lazy"
@@ -64,7 +64,7 @@
     </v-card>
 
     <v-row>
-      <v-col class="mt-5 ml-15" cols="12" align="justify">
+      <v-col class="mt-5" cols="12" align="center">
         <!-- align pra alinhamento horizontal, justify pra alinhamento vertical -->
         <v-btn class="mx-2" elevation="4" fab small color="black">
           <v-icon color="white"> mdi-information-outline </v-icon>
@@ -77,7 +77,7 @@
     </v-row>
 
     <v-row>
-      <v-col class="ml-15" cols="12" align="justify">
+      <v-col class="" cols="12" align="center">
         <v-btn class="mx-2" elevation="4" fab small color="black">
           <v-icon color="white"> mdi-information-outline </v-icon>
         </v-btn>
