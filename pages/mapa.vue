@@ -1,5 +1,25 @@
 <template>
   <v-container>
+    <v-card class="mx-auto" max-width="300" tile>
+      <v-list dense>
+        <v-subheader>Atrações</v-subheader>
+        <v-list-item-group v-model="selectedItem" color="secondary">
+          <v-list-item two-line>
+            <v-list-item-content>
+              <v-list-item-title>Pulp Fiction - Descrição de Áudio</v-list-item-title>
+              <v-list-item-subtitle>R$20,00</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item two-line>
+            <v-list-item-content>
+              <v-list-item-title>A outra Face - Descrição de Áudio</v-list-item-title>
+              <v-list-item-subtitle>R$28,00</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-card>
+
     <v-row class="text-center mt-1 ml-2">
       <div
         v-for="item in availableAccessibility"
@@ -25,12 +45,18 @@
         ></v-progress-linear>
       </template>
 
-      <v-img
+      <iframe
+        width="350"
         height="250"
-        src="https://cdn.vuetifyjs.com/images/toolbar/map.jpg"
-      ></v-img>
+        style="border: 0"
+        loading="lazy"
+        allowfullscreen
+        :src="`https://www.google.com/maps/embed/v1/place?key=${getApiKey()}
+        &q=${encode()}`"
+      >
+      </iframe>
 
-      <v-card-title class="pb-0">Teatro Municipal</v-card-title>
+      <v-card-title class="pb-0">{{ name }}</v-card-title>
 
       <v-card-actions>
         <v-btn color="secundary" text @click="fazALgo"> Rotas </v-btn>
@@ -68,10 +94,25 @@
 
 <script>
 export default {
+  asyncData({ query }) {
+    return {
+      address: query.address,
+      name: query.name,
+    };
+  },
   data() {
     return {
       availableAccessibility: ["fisica", "visual", "auditiva"],
     };
+  },
+  methods: {
+    getApiKey() {
+      return process.env.apiKey;
+    },
+    encode() {
+      console.log(this);
+      return this.address;
+    },
   },
 };
 </script>

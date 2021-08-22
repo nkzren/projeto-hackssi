@@ -18,6 +18,7 @@
     <v-row justify="center">
       <v-col cols="5" align="center">
         <v-btn
+          class="black--text font-weight-bold"
           width="120"
           large
           rounded
@@ -35,7 +36,7 @@
           rounded
           elevation="4"
           color="primary"
-          v-on:click="search(content)"
+          v-on:click="search"
         >
           Pesquisar
         </v-btn>
@@ -46,12 +47,15 @@
 
 <script>
 export default {
-  props: {
-    search: Function
-  },
   data() {
     return {
-      content: ""
+      content: "",
+      filters: [],
+    }
+  },
+  methods: {
+    search() {
+      this.$emit('search', { content: this.content, filters: this.filters });
     }
   }
 }

@@ -1,9 +1,9 @@
 <template>
   <v-container class="pa-4" flat height="500px">
-    <v-row>
-      <!-- <v-col cols="12" align="center">
-        <v-btn class="black--text" rounded x-large color="primary"> Conheça as Comunidades! </v-btn>
-      </v-col> -->
+    <v-row class="my-4">
+      <v-col cols="12" align="center">
+        <img class="align-center" height="250" src="@/assets/logo_pand.png"/>
+      </v-col>
     </v-row>
 
     <v-row>
@@ -14,7 +14,7 @@
 
     <v-row justify="center">
       <v-col class="pt-0 mb-4" cols="10">
-        <div class="d-flex justify-center" @click="test">
+        <div class="d-flex justify-center">
           <v-chip-group
             multiple
             v-model="amenities"
@@ -31,7 +31,7 @@
       </v-col>
     </v-row>
 
-    <CommonSearch/>
+    <CommonSearch @search="goToLocais" path="locais"/>
     
   </v-container>
 </template>
@@ -44,8 +44,14 @@ export default {
     }
   },
   methods: {
-    test() {
-      console.log(this.amenities)
+    goToLocais({content, filters}) {
+      this.$router.push({ 
+        path: `locais/`,
+        query: {
+          content,
+          filters: filters.join(','),
+        }
+      });
     }
   }
 }

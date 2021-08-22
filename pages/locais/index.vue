@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <CommonSearch :search="getPlaces"/>
+    <CommonSearch @search="getPlaces" path="/locais" />
     <LocalCard
       class="my-5"
       v-for="local in locais"
@@ -21,34 +21,43 @@ export default {
       locais: [],
     }
   },
-  methods: {
-    async getPlaces(search, accessibility) {
-      const places = await this.$axios.$get("/locais", {
-        params: {
-          q: search,
-          //accessibility,
-       }
-      });
+  async asyncData({ $axios, query }) {
+    await setTimeout(() => {}, 200)
+    const response = await $axios.$get('/locais', {
+      params: {
+        q: query.content,
+        filters: query.filters
+      }
+    });
 
-      this.locais = places;
+    return {
+      locais: response,
+    }
+  },
+  methods: {
+    async getPlaces({ content, filters }) {
+      console.log(content)
+      const response = await this.$axios.$get('/locais', {
+        params: {
+          q: content,
+          filters,
+        }
+      });
+      this.locais = response;
 
     },
     goTo(local) {
-
+      console.log(local.id)
       this.$router.push({ 
-        path: `locais/${local.id}`,
+        path: `/locais/${local.id}`,
         query: {
           address: local.address,
           image: local.image,
           accessibility: Object.keys(local.accessibility).filter(key => local.accessibility[key] === true).join(),
           name: local.name
         },
-        props: true,
       });
     }
   },
-  async created() {
-    await this.getPlaces();
-  }
 }
 </script>

@@ -116,14 +116,53 @@ const placesDetails = {
         rating: 5
       },
     ]
+  }, 
+  4: {
+    rating: {
+      visual: 4.5,
+      fisica: 4,
+      auditiva: 0
+    },
+    comments: [
+      {
+        author: "Fulano",
+        condition: {
+          visual: true,
+          fisica: false,
+          auditiva: false
+        },
+        text: "Acessível e interessante!",
+        rating: 4.5
+      },
+      {
+        author: "Someone",
+        condition: {
+          visual: true,
+          fisica: false,
+          auditiva: false
+        },
+        text: "Gostei. muito acessivel",
+        rating: 3
+      },
+      {
+        author: "Pessoa gente boa",
+        condition: {
+          visual: false,
+          fisica: true,
+          auditiva: false
+        },
+        text: "Muito acessivel para pessoas com deficiência fisica",
+        rating: 5
+      },
+    ]
   }
 }
 
 const placesHeaders= [
   {
     id: 1,
-    name: "Cinema tal",
-    address: "Rua alguma, 234 - Centro - São Paulo - SP",
+    name: "Cinema Tal",
+    address: "Rua Qualquer, 41 - Centro, São Paulo",
     accessibility: {
       visual: true,
       fisica: true,
@@ -133,14 +172,14 @@ const placesHeaders= [
   },
   {
     id: 2,
-    name: "Lanches do Geferson",
-    address: "Rua nao sei, 555 - Liberdade - São Paulo - SP",
+    name: "Pinacoteca de São Paulo",
+    address: "Praça da Luz - Luz, São Paulo",
     accessibility: {
       visual: true,
       fisica: false,
       auditiva: true
     },
-    image: "https://images.unsplash.com/photo-1609534655988-3f5225c13553?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FmZXRlcmlhfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    image: "https://skyscanner-prod-trippy-public.s3.amazonaws.com/photos/v7/qF/1466831973/Pinacoteca_do_Estado_de_S-Pinacotheca_of_the_state_-20000000009506235-500x375.jpg",
   },
   {
     id: 3,
@@ -148,10 +187,21 @@ const placesHeaders= [
     address: "Rua dos museu, 123 - Tatuapé - São Paulo - SP",
     accessibility: {
       visual: true,
-      fisica: true,
-      auditiva: false
+      fisica: false,
+      auditiva: true
     },
     image: "https://images.unsplash.com/photo-1601319839981-e5b7986cf461?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
+  },
+  {
+    id: 4,
+    name: "Cinemark Santa Cruz",
+    address: "Rua Domingos de Morais, 2564 - Vila Mariana, São Paulo",
+    accessibility: {
+      visual: true,
+      fisica: true,
+      auditiva: true
+    },
+    image: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80",
   },
 ];
 

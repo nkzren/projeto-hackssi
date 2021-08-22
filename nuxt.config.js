@@ -39,8 +39,13 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/dotenv'
   ],
+
+  env: {
+    apiKey: process.env.API_KEY,
+  },
 
   googleFonts: {
     families: {

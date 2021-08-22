@@ -1,7 +1,7 @@
 <template>
   <v-card class="rounded-xl" elevation="0" color="blocos">
-    <v-card-title class="text-h4">{{ name }}</v-card-title>
-    <v-card-subtitle class="text-h5">{{ address }}</v-card-subtitle>
+    <v-card-text class="pb-0 text-h4 font-weight-bold">{{ name }}</v-card-text>
+    <v-card-subtitle class="text-h5 font-weight-medium">{{ address }}</v-card-subtitle>
     <v-img class="mx-1" height="150" :src=imageUrl></v-img>
     <v-row class="text-center mt-1 ml-2">
       <div
@@ -21,6 +21,7 @@
 
   export default {
     props: {
+      id: String,
       name: String,
       address: String,
       imageUrl: String,

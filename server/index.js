@@ -18,20 +18,26 @@ app.get("/equipe", (req, res) => {
 
 
 app.get("/locais", (req, res) => {
+  const { q, filters } = req.query;
 
-  const { q, accessibility } = req.query;
+  if(!placesHeaders) return res.status(204).send({message: "Nenhum lugar encontrado!"});
 
-  if(!placesHeaders) return res.status(404).send({message: "Nenhum lugar encontrado!"});
+  // const filterList = filters && filters.split(",") || [];
 
-  const accessibilityList = accessibility.split(",");
-
-  if(q){
-    const filteredPlaces = placesHeaders.filter((place) => (place.name.toLowerCase().includes(q.toLowerCase())));
-
-    return res.status(200).send(filteredPlaces);
+  // const filteredPlaces = placesHeaders.filter((place) => {
+  //   for(let item of accessibilityList) {
+  //     if(place.accessibility[item]) {
+  //       return true;
+  //     }
+  //   }
+  //   return false;
+  // })
+  const query = q && q.toLowerCase() || '';
+  if (query) {
+    return res.status(200).send(placesHeaders.filter(e => e.name.toLowerCase().includes(query.toLowerCase())));
+  } else {
+    return res.status(200).send(placesHeaders);
   }
-
-  return res.status(200).send(placesHeaders);
 
 });
 

@@ -5,6 +5,7 @@
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
+      right
       fixed
       app
     >
@@ -31,14 +32,15 @@
       fixed
       app
     >
+      <v-btn
+        icon
+        @click.stop="goBack"
+      >
+        <v-icon>mdi-{{ `chevron-left` }}</v-icon>
+      </v-btn>
+      <v-spacer/>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <!-- n sei se vamos colocar isso aqui -->
-      <!-- <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn> -->
       <v-toolbar-title v-text="title" />
     </v-app-bar>
     <v-main>
@@ -86,6 +88,11 @@ export default {
       right: true,
       rightDrawer: false,
       title: ''
+    }
+  },
+  methods: {
+    goBack() {
+      this.$router.go(-1);
     }
   }
 }
