@@ -3,7 +3,7 @@ const { json, urlencoded } = require('body-parser');
 const cors = require('cors');
 const app = express();
 
-const places = require('./data/places');
+const { placesHeaders, placesDetails } = require('./data/places');
 const groups = require('./data/groups');
 
 app.use(cors());
@@ -12,7 +12,7 @@ app.use(urlencoded({extended: true}));
 
 app.get("/equipe", (req, res) => {
 
-  return res.send("A Equipé é foda!!!");
+  return res.send("A Equipé é soda!!!");
 
 });
 
@@ -21,17 +21,27 @@ app.get("/locais", (req, res) => {
 
   const { q } = req.query;
 
-  if(!places) return res.status(404).send({message: "Nenhum lugar encontrado!"});
+  if(!placesHeaders) return res.status(404).send({message: "Nenhum lugar encontrado!"});
 
   if(q){
-    const filteredPlaces = places.filter((place) => ( place.name.toLowerCase().includes(q.toLowerCase()) ));
+    const filteredPlaces = placesHeaders.filter((place) => ( place.name.toLowerCase().includes(q.toLowerCase()) ));
 
     return res.status(200).send(filteredPlaces);
   }
 
-  return res.status(200).send(places);
+  return res.status(200).send(placesHeaders);
 
 });
+
+app.get("/locais/:id", (req, res) => {
+
+  const { id } = req.params;
+
+  if(!placesDetails[id]) return res.status(404).send({message: "Nenhum lugar encontrado com esse id!"});
+
+  return res.status(200).send(placesDetails[id]);
+
+})
 
 app.get("/grupos", (req, res) => {
 
@@ -52,6 +62,7 @@ app.get("/grupos/:id", (req, res) => {
   return res.status(404).send({message: "Grupo não encontrado!"});
 
 });
+
 
 port = process.env.PORT | 3000;
 
