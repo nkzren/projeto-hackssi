@@ -2,7 +2,7 @@
   <v-container>
     <v-card class="mx-auto" max-width="300" tile>
       <v-list dense>
-        <v-subheader>Atrações</v-subheader>
+        <v-card-text class="font-weight-bold">Atrações</v-card-text>
         <v-list-item-group v-model="selectedItem" color="secondary">
           <v-list-item two-line>
             <v-list-item-content>
