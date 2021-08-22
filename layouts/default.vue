@@ -62,20 +62,37 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Início',
+          icon: 'mdi-account-circle',
+          title: 'Registrar',
+          to: '/registrar'
+        },
+        {
+          icon: 'mdi-magnify',
+          title: 'Buscar',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Registrar',
-          to: '/registrar'
+          icon: 'mdi-map-marker',
+          title: 'Locais',
+          to: '/locais'
+        },
+        {
+          icon: 'mdi-account-group',
+          title: 'Comunidade',
+          to: '/comunidade'
         }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
+      title: ''
     }
   }
 }
 </script>
+
+<style scoped>
+v-app {
+  font-family: 'Montserrat', sans-serif;
+}
+</style>

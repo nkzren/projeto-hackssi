@@ -4,7 +4,7 @@ const placesDetails = {
     rating: {
       visual: 5,
       fisica: 5,
-      auditiva: 3
+      auditiva: 3.5
     },
     comments: [
       {
@@ -42,7 +42,7 @@ const placesDetails = {
   2: {
     rating: {
       visual: 4.5,
-      fisica: 4,
+      fisica: 0,
       auditiva: 5
     },
     comments: [
@@ -77,6 +77,45 @@ const placesDetails = {
         rating: 5
       },
     ]
+  },
+  3: {
+    rating: {
+      visual: 4.5,
+      fisica: 4,
+      auditiva: 0
+    },
+    comments: [
+      {
+        author: "Fulano",
+        condition: {
+          visual: true,
+          fisica: false,
+          auditiva: false
+        },
+        text: "Acessível e interessante!",
+        rating: 4.5
+      },
+      {
+        author: "Someone",
+        condition: {
+          visual: true,
+          fisica: false,
+          auditiva: false
+        },
+        text: "Gostei. muito acessivel",
+        rating: 3
+      },
+      {
+        author: "Pessoa gente boa",
+        condition: {
+          visual: false,
+          fisica: true,
+          auditiva: false
+        },
+        text: "Muito acessivel para pessoas com deficiência fisica",
+        rating: 5
+      },
+    ]
   }
 }
 
@@ -102,6 +141,17 @@ const placesHeaders= [
       auditiva: true
     },
     image: "https://images.unsplash.com/photo-1609534655988-3f5225c13553?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FmZXRlcmlhfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+  },
+  {
+    id: 3,
+    name: "Museu do Tadeu",
+    address: "Rua dos museu, 123 - Tatuapé - São Paulo - SP",
+    accessibility: {
+      visual: true,
+      fisica: true,
+      auditiva: false
+    },
+    image: "https://images.unsplash.com/photo-1601319839981-e5b7986cf461?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
   },
 ];
 

@@ -5,11 +5,13 @@
         <v-text-field
           class="search-field"
           filled
+          v-model="content"
           placeholder="Buscar..."
           background-color="blocos"
           rounded
           hide-details
           append-icon="mdi-magnify"
+          append-outer-icon="mdi-microphone-outline"
         ></v-text-field>
       </v-col>
     </v-row>
@@ -33,6 +35,7 @@
           rounded
           elevation="4"
           color="primary"
+          v-on:click="search(content)"
         >
           Pesquisar
         </v-btn>
@@ -40,3 +43,16 @@
     </v-row>
   </v-container> 
 </template>
+
+<script>
+export default {
+  props: {
+    search: Function
+  },
+  data() {
+    return {
+      content: ""
+    }
+  }
+}
+</script>

@@ -19,12 +19,14 @@ app.get("/equipe", (req, res) => {
 
 app.get("/locais", (req, res) => {
 
-  const { q } = req.query;
+  const { q, accessibility } = req.query;
 
   if(!placesHeaders) return res.status(404).send({message: "Nenhum lugar encontrado!"});
 
+  const accessibilityList = accessibility.split(",");
+
   if(q){
-    const filteredPlaces = placesHeaders.filter((place) => ( place.name.toLowerCase().includes(q.toLowerCase()) ));
+    const filteredPlaces = placesHeaders.filter((place) => (place.name.toLowerCase().includes(q.toLowerCase())));
 
     return res.status(200).send(filteredPlaces);
   }

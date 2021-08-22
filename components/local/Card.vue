@@ -2,14 +2,23 @@
   <v-card class="rounded-xl" elevation="0" color="blocos">
     <v-card-title class="text-h4">{{ name }}</v-card-title>
     <v-card-subtitle class="text-h5">{{ address }}</v-card-subtitle>
-    <v-img class="mx-1" height="100" :src=imageUrl></v-img>
-    <v-row class="text-center mt-1 ml-2" justify="left">
-      <div v-for="item in availableAccessibility" :key="item" class="pa-5 my-2 secondary rounded-circle d-inline-block"></div>
+    <v-img class="mx-1" height="150" :src=imageUrl></v-img>
+    <v-row class="text-center mt-1 ml-2">
+      <div
+        v-for="item in availableAccessibility"
+        :key="item"
+        class="pa-5 my-2 mx-1 secondary rounded-circle d-inline-block"
+      >
+        <v-icon color="white" v-if="item === 'fisica'">mdi-wheelchair-accessibility</v-icon>
+        <v-icon color="white" v-if="item === 'visual'">mdi-eye-off</v-icon>
+        <v-icon color="white" v-if="item === 'auditiva'">mdi-ear-hearing-off</v-icon>
+      </div>
     </v-row>
   </v-card>
 </template>
 
 <script>
+
   export default {
     props: {
       name: String,
