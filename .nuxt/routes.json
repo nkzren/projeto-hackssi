@@ -1,0 +1,16 @@
+[
+  {
+    "name": "inspire",
+    "path": "/inspire",
+    "component": "/home/renan/Documents/dev/projeto-hackssi/pages/inspire.vue",
+    "chunkName": "pages/inspire",
+    "_name": "_b859af72"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/renan/Documents/dev/projeto-hackssi/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_62de137f"
+  }
+]
