@@ -1,0 +1,20 @@
+version: '3.7'
+networks:
+  default:
+    external: true
+    name: development
+services:
+  app:
+    image: node:14
+    stdin_open: true
+    tty: true
+    working_dir: /opt/app/
+    ports:
+      - 8080:8080
+    entrypoint:
+      - 'bash'
+    environment: 
+      - NODE_ENV=development
+      - HOST=0.0.0.0
+    volumes: 
+      - ${PWD}:/opt/app/
