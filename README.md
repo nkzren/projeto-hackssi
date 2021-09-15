@@ -2,6 +2,29 @@
 
 ## Build Setup
 
+You can choose to run the program in a containerized environment or on your own computer.
+
+To run in a container, read the **Docker** section, otherwise read the **Without containerization** section.
+
+In both cases, you will still have to follow the **Running the application** section.
+
+### Docker
+
+```bash
+make setup
+make start
+```
+
+### Without containerization
+
+Install `nodejs` and `npm` through your preferred package manager, then:
+
+```bash
+npm install yarn
+```
+
+### Running the application
+
 ```bash
 # install dependencies
 $ yarn install
