@@ -10,7 +10,7 @@ help:
 	@echo -e "- \x1b[1;4mclean\x1b[m cleans the docker environment"
 	@echo -e "- \x1b[1;4msetup\x1b[m configures the \x1b[1mdocker-compose\x1b[m environment for the first time"
 
-start:
+start: setup	
 	@docker-compose up -d
 	@docker-compose exec app bash
 
@@ -23,5 +23,5 @@ clean:
 
 setup:
 	@echo "Creating network 'development'..."
-	@docker network create development 2>/dev/null; true
+	@docker network create --gateway 172.28.0.1 --subnet 172.28.0.0/16 development 2>/dev/null; true
 	@mkdir -p dist/
