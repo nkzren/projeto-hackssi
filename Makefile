@@ -10,7 +10,7 @@ help:
 	@echo -e "- \x1b[1;4mclean\x1b[m cleans the docker environment"
 	@echo -e "- \x1b[1;4msetup\x1b[m configures the \x1b[1mdocker-compose\x1b[m environment for the first time"
 
-start: setup	
+start:
 	@docker-compose up -d
 	@docker-compose exec app bash
 
