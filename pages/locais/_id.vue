@@ -147,7 +147,7 @@
 <script>
 export default {
   async asyncData({ params, query, $axios }) {
-    const data = await $axios.$get(`/locais/${params.id}`);
+    const data = await $axios.$get(`/place/${params.id}`);
     return {
       ...data,
       address: query.address,
