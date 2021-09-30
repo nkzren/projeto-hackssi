@@ -9,7 +9,7 @@
       :name="local.name"
       :accessibility="local.accessibility"
       :address="local.address"
-      :imageUrl="local.image"/>
+      :imageUrl="local.imageUrl"/>
   </v-container>
 </template>
 
@@ -50,7 +50,7 @@ export default {
         path: `/locais/${local.id}`,
         query: {
           address: local.address,
-          image: local.image,
+          image: local.imageUrl,
           accessibility: Object.keys(local.accessibility).filter(key => local.accessibility[key] === true).join(),
           name: local.name
         },
