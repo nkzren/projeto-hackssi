@@ -1,4 +1,10 @@
-# projeto-hackssi
+# PAND
+
+## Overview
+
+PAND (Plataforma de Acessibilidade e Navegação para Deficiências in portuguese or Accessibility and Navigation Platform for Disabilities) is a platform that promotes the social inclusion of people with disabilities, facilitating access and path to accessible urban facilities and putting pressure on other establishments to adapt.
+
+When using PAND, users can search for users can search for places ike restaurants, theaters, parks and more; and filter to only those that have accessibility for a specific disability. In addition, PAND also provides a community forum for people to exchange information and recommendations.
 
 ## Build Setup
 
