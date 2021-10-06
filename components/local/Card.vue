@@ -34,9 +34,9 @@
     },
     methods: {
       listAccessibility() {
-        // const keys = Object.keys(this.accessibility).filter(key => this.accessibility[key] === true);
-
-        this.availableAccessibility = {};
+        const keys = Object.keys(this.accessibility).filter(key => this.accessibility[key] === true);
+        
+        this.availableAccessibility = keys;
       }
     },
     created() {
