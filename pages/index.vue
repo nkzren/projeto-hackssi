@@ -48,7 +48,7 @@ export default {
       this.$router.push({ 
         path: `locais/`,
         query: {
-          content,
+          q: content,
           filters: filters.join(','),
         }
       });
