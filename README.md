@@ -20,7 +20,7 @@ In both cases, you will still have to follow the **Running the application** sec
 make setup
 make start
 ```
-After configure the docker container, run the command:
+After configuring the docker container, run the command:
 ```bash
 yarn dev
 ```
