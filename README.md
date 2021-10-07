@@ -1,20 +1,53 @@
-# projeto-hackssi
+# PAND
+
+## Overview
+
+PAND (Plataforma de Acessibilidade e Navegação para Deficiências in portuguese or Accessibility and Navigation Platform for Disabilities) is a platform that promotes the social inclusion of people with disabilities, facilitating access and path to accessible urban facilities and putting pressure on other establishments to adapt.
+
+When using PAND, users can search for users can search for places ike restaurants, theaters, parks and more; and filter to only those that have accessibility for a specific disability. In addition, PAND also provides a community forum for people to exchange information and recommendations.
 
 ## Build Setup
 
+You can choose to run the program in a containerized environment or on your own computer.
+
+To run in a container, read the **Docker** section, otherwise read the **Without containerization** section.
+
+In both cases, you will still have to follow the **Running the application** section.
+
+### Docker
+
+```bash
+make setup
+make start
+```
+After configure the docker container, run the command:
+```bash
+yarn dev
+```
+
+### Without containerization
+
+Install `nodejs` and `npm` through your preferred package manager, then:
+
+```bash
+npm install yarn
+```
+
+### Running the application
+
 ```bash
 # install dependencies
-$ npm install
+$ yarn install
 
 # serve with hot reload at localhost:3000
-$ npm run dev
+$ yarn dev
 
 # build for production and launch server
-$ npm run build
-$ npm run start
+$ yarn build
+$ yarn start
 
 # generate static project
-$ npm run generate
+$ yarn generate
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
